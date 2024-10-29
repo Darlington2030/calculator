@@ -1,0 +1,166 @@
+/* Reset default margin, padding, and box-sizing for all elements */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* Set a default font family */
+    font-family: sans-serif;
+}
+
+
+/* Center the app container on the page */
+
+.app {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+
+/* Calculator container styling */
+
+.calculator {
+    background-color: #22252D;
+    width: 100%;
+    max-width: 375px;
+    min-height: 640px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 1.5rem;
+    overflow: hidden;
+    /* Prevents content from overflowing */
+}
+
+
+/* Display section styling */
+
+.display {
+    min-height: 200px;
+    padding: 1.5rem;
+    display: flex;
+    justify-content: flex-end;
+    /* Align content to the right */
+    align-items: flex-end;
+    color: white;
+    text-align: right;
+    flex: 1 1 0%;
+    /* Allows display area to grow */
+}
+
+
+/* Content container inside the display */
+
+.display .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    width: 100%;
+    max-width: 100%;
+    overflow: auto;
+    /* Enables scrolling for overflow content */
+}
+
+
+/* Input section in the display for expressions */
+
+.display .input {
+    width: 100%;
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+}
+
+
+/* Output section in the display for results */
+
+.display .output {
+    font-size: 3rem;
+    font-weight: 700;
+    width: 100%;
+    white-space: nowrap;
+    /* Prevents text from wrapping */
+}
+
+
+/* Styling for operator color */
+
+.display .operator {
+    color: #EB6666;
+}
+
+
+/* Styling for brackets and percent colors */
+
+.display .brackets,
+.display .percent {
+    color: #26FED7;
+}
+
+
+/* Keypad section styling */
+
+.keys {
+    background-color: #292D36;
+    padding: 1.5rem;
+    border-radius: 1.5rem 1.5rem 0 0;
+    display: grid;
+    /* Define a 4x5 grid for keys */
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    grid-gap: 1rem;
+    /* Adds a shadow for depth */
+    box-shadow: 0px -2px 16px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Styling for each key */
+
+.keys .key {
+    position: relative;
+    cursor: pointer;
+    display: block;
+    height: 0;
+    padding-top: 100%;
+    /* Keeps the key square */
+    background-color: #262933;
+    border-radius: 1rem;
+    transition: 0.2s;
+    /* Smooth hover transition */
+    user-select: none;
+    /* Prevents text selection */
+}
+
+
+/* Centers text in the key */
+
+.keys .key span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2rem;
+    font-weight: 700;
+    color: #FFF;
+}
+
+
+/* Key hover effect for visual feedback */
+
+.keys .key:hover {
+    box-shadow: inset 0px 0px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Color for operator keys */
+
+.keys .key.operator span {
+    color: #EB6666;
+}
+
+
+/* Color for action keys (clear, backspace, etc.) */
+
+.keys .key.action span {
+    color: #26FED7;
+}
